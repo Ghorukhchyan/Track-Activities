@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <p class="size">2021 Wellness Plan</p>
+    <Progress />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Progress from "@/components/Progress.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    Progress,
   },
 };
 </script>
+
+<style scoped>
+.size {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 0;
+}
+</style>
