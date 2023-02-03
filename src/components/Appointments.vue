@@ -77,6 +77,7 @@ export default {
 .green-colour {
   border: 2px solid green;
   border-radius: 12px;
+  /* color: red; */
 }
 .blue-colour {
   border: 2px solid blue;
