@@ -64,11 +64,14 @@ export default {
       todos: (state) => state.todo.todos,
       percent: (state) => state.todo.percent,
     }),
-    ...mapGetters(["isComplete", "isBooked", "bookNow"]),
+    ...mapGetters(["isComplete", "isBooked", "bookNow", "countPercent"]),
   },
 
   methods: {
     ...mapActions(["deleteLine"]),
+  },
+  mounted() {
+    this.countPercent;
   },
 };
 </script>

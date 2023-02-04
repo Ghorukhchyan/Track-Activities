@@ -47,6 +47,7 @@ export default {
         show: false,
         id: "5",
       },
+
       {
         title: "NAD",
         status: "Booked",
@@ -64,9 +65,10 @@ export default {
         id: "7",
       },
     ],
-    percent: 67,
+    percent: null,
   },
   getters: {
+    // ---for months---
     isComplete(state) {
       return state.todos.filter((i) => i.status === "completed");
     },
@@ -77,6 +79,20 @@ export default {
 
     bookNow(state) {
       return state.todos.filter((i) => i.status === "Book Now");
+    },
+    // ---for count percent---
+    countPercent(state) {
+      const result = state.todos.filter(
+        (i) => i.status === "completed" || i.status === "Booked"
+      );
+
+      const completed = result.filter((x) => x.status === "completed");
+
+      completed.length === 0
+        ? (state.percent = 0)
+        : (state.percent = Math.round(
+            (100 * completed.length) / result.length
+          ));
     },
   },
   actions: {
@@ -94,18 +110,6 @@ export default {
       state.todos.forEach((element) => {
         element.show = false;
       });
-
-      const result = state.todos.filter(
-        (i) => i.status === "completed" || i.status === "Booked"
-      );
-
-      const completed = result.filter((x) => x.status === "completed");
-
-      completed.length === 0
-        ? (state.percent = 0)
-        : (state.percent = Math.round(
-            (100 * completed.length) / result.length
-          ));
     },
   },
 };

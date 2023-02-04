@@ -15,7 +15,9 @@
           </div>
 
           <span v-if="todo.show" class="tooltip"
-            ><button @click="deleteLine(inx)" class="btn">delete</button></span
+            ><button @click="deleteLine(inx) && countPercent" class="btn">
+              delete
+            </button></span
           >
         </div>
       </div>
@@ -24,13 +26,14 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   computed: {
     ...mapState({
       todos: (state) => state.todo.todos,
     }),
+    ...mapGetters(["countPercent"]),
   },
   methods: {
     ...mapActions(["deleteLine"]),
