@@ -48,7 +48,7 @@ export default {
   name: "DoughnutChart",
   props: {
     percent: {
-      default: 20,
+      type: Number,
     },
     foregroundColor: {
       type: String,

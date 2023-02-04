@@ -91,6 +91,9 @@ export default {
   mutations: {
     [mutationTypes.DELL_LINE](state, inx) {
       state.todos = state.todos.filter((x, y) => y != inx);
+      state.todos.forEach((element) => {
+        element.show = false;
+      });
 
       const result = state.todos.filter(
         (i) => i.status === "completed" || i.status === "Booked"

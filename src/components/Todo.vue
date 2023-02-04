@@ -27,9 +27,6 @@
 import { mapState, mapActions } from "vuex";
 
 export default {
-  data() {
-    return {};
-  },
   computed: {
     ...mapState({
       todos: (state) => state.todo.todos,

@@ -2,8 +2,8 @@
   <div class="body">
     <DoughnutChart :percent="percent" />
     <div>
-      <div class="header">
-        <div v-for="list in months" :key="list.id" class="months">
+      <div class="header rounded-12">
+        <div v-for="list in months" :key="list.id" class="months-position">
           <h2 class="mb-4">
             {{ list.month }}
           </h2>
@@ -12,7 +12,7 @@
             <div
               v-for="complete in isComplete"
               :key="complete.id"
-              class="green-colour mb-4"
+              class="green-colour rounded-12 mb-4"
             ></div>
           </div>
 
@@ -20,7 +20,7 @@
             <div
               v-for="complete in isBooked"
               :key="complete.id"
-              class="blue-colour mb-4"
+              class="blue-colour rounded-12 mb-4"
             ></div>
           </div>
 
@@ -28,7 +28,7 @@
             <div
               v-for="complete in bookNow"
               :key="complete.id"
-              class="light-blue-colour mb-4"
+              class="light-blue-colour rounded-12 mb-4"
             ></div>
           </div>
         </div>
@@ -74,36 +74,36 @@ export default {
 </script>
 
 <style scoped>
+.body {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rounded-12 {
+  border-radius: 12px;
+}
+
 .green-colour {
   border: 2px solid green;
-  border-radius: 12px;
-  /* color: red; */
 }
 .blue-colour {
   border: 2px solid blue;
-  border-radius: 12px;
 }
 
 .light-blue-colour {
   border: 2px solid rgb(142, 142, 255);
-  border-radius: 12px;
 }
 
 .mb-4 {
   margin-bottom: 4px;
 }
 
-.body {
-  display: flex;
-  justify-content: space-around;
-}
 .header {
   display: flex;
   padding: 0px 16px 16px;
   border: 1px solid gray;
-  border-radius: 12px;
 }
-.months {
+.months-position {
   margin: 0px 35px;
 }
 
@@ -127,13 +127,13 @@ export default {
 }
 
 @media screen and (max-width: 1700px) {
-  .months {
+  .months-position {
     margin: 0px 10px;
   }
 }
 
 @media screen and (max-width: 1120px) {
-  .months {
+  .months-position {
     margin: 0px;
   }
 }
