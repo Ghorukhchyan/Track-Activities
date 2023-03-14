@@ -16,7 +16,7 @@
 
           <span v-if="todo.show" class="tooltip"
             ><button @click="deleteLine(inx) && countPercent" class="btn">
-              delete
+              Delete
             </button></span
           >
         </div>
